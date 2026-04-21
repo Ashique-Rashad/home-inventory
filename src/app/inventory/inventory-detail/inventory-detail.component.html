@@ -1,0 +1,22 @@
+<app-inventory-item-header [item]="item"></app-inventory-item-header>
+<div class="item-info">
+    <h4>{{ item?.name }}</h4>
+    <div class="d-flex">
+        <p class="label" *ngFor="let label of item?.labels" [style.background-color]=" '' | randomColor"> {{ label }}
+        </p>
+    </div>
+</div>
+<div class="d-flex">
+    <div class="item-images__section">
+        <app-inventory-item-images></app-inventory-item-images>
+    </div>
+    <div class="item-key-details__section">
+        <app-inventory-item-key-details [item]="item"></app-inventory-item-key-details>
+    </div>
+</div>
+
+<div class="item-other-details__section">
+    <div style="margin: 0 25px;">
+        <app-inventory-item-other-details [item]="item"></app-inventory-item-other-details>
+    </div>
+</div>

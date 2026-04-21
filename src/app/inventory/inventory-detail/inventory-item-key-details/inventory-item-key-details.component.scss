@@ -1,0 +1,62 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 40px;
+    background: #f5f7fa;
+}
+
+.item-card {
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.item-container {
+    margin-top: 15px;
+}
+
+.item-title {
+    margin: 0 0 6px 0;
+    color: #334155;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+
+}
+
+.item-description {
+    margin: 0;
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 22.75px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #475569;
+}
+
+.location-icon {
+    color: #3B82F6;
+    margin-right: 6px;
+}
+
+.calendar-icon {
+    color: #94A3B8;
+    margin-right: 6px;
+}

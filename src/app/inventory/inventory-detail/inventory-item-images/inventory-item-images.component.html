@@ -1,0 +1,18 @@
+<div class="image-gallery">
+
+  <!-- Main Image -->
+  <div class="main-image">
+    <img [src]="selectedImage" alt="Product Image" />
+  </div>
+
+  <!-- Thumbnails -->
+  <div class="thumbnail-row">
+    <img 
+      *ngFor="let img of images" 
+      [src]="img" 
+      (click)="changeImage(img)" 
+      [class.active]="img === selectedImage"
+    />
+  </div>
+
+</div>

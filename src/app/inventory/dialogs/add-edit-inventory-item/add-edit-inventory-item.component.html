@@ -1,0 +1,91 @@
+<div class="create-product-wrapper" *ngIf="isFormReadyToShow">
+  <p-dialog [(visible)]="visible" class="p-dialog-header-with-close-icon" header="{{ isForEdit() ? 'Edit Product' : 'Add Product' }}"
+    (onHide)="hideDialog()" [modal]="true" [style]="{ width: '50vw' }"
+    [contentStyle]="{ 'padding': '10px 20px 10px 20px', 'border-radius': '10px'}" [draggable]="false"
+    [closeOnEscape]="false" [resizable]="false">
+    <div class="dialog_body w-100 mt-1">
+      <form [formGroup]="productForm">
+        <!-- Row 1 -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name <span class="asterisk">*</span></label>
+            <input type="text" [value]="item()?.name" formControlName="name" />
+          </div>
+
+          <div class="form-group">
+            <label>Brand <span class="asterisk">*</span></label>
+            <input type="text" formControlName="brand" />
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Model <span class="asterisk">*</span></label>
+            <input type="text" formControlName="model" />
+          </div>
+
+          <div class="form-group">
+            <label>Color <span class="asterisk">*</span></label>
+            <input type="text" formControlName="color" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Locations <span class="asterisk">*</span></label>
+            <p-multiSelect [options]="locationsList" formControlName="locations" placeholder="Select locations"
+              [showClear]="true" [showToggleAll]="false">
+            </p-multiSelect>
+          </div>
+        
+          <div class="form-group">
+            <label>Labels <span class="asterisk">*</span></label>
+            <p-multiSelect [options]="labelsList" formControlName="labels" placeholder="Select locations"
+              [showClear]="true" [showToggleAll]="false">
+            </p-multiSelect>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Quantity <span class="asterisk">*</span></label>
+            <input type="number" formControlName="quantity" />
+          </div>
+
+          <div class="form-group">
+            <label>Purchase Price <span class="asterisk">*</span></label>
+            <input type="number" formControlName="purchasePrice" />
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Purchase Date <span class="asterisk">*</span></label>
+            <input type="date" formControlName="purchaseDate" />
+          </div>
+
+          <div class="form-group">
+            <label>Warranty <span class="asterisk">*</span></label>
+            <input type="text" formControlName="warranty" />
+          </div>
+        </div>
+
+        <!-- Full width -->
+        <div class="form-group full-width">
+          <label>Notes</label>
+          <textarea formControlName="notes"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="dialog__footer">
+      <button class="info-btn" (click)="hideDialog()">Cancel</button>
+      <button type="button" autoid="save-button" class="primary-btn float-right m-1"
+        (click)="onSubmit()" [disabled]="!productForm.valid">
+        Save
+      </button>
+    </div>
+  </p-dialog>
+</div>

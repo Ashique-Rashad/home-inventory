@@ -1,0 +1,76 @@
+<div class="signInWrapper">
+    <div class="d-flex">
+        <div class="signIn-left-content">
+            <img src="../../../assets/images/sign_in_img.jpg" width="450" height="420" />
+            <p class="signIn-left-content__heading">Organize Everything</p>
+            <p class="signIn-left-content__content">Keep track of your belongings, warranties, and important documents all in one secure
+                place.</p>
+        </div>
+        <div class="singIn-right-content">
+            <div id="img-container">
+                <img src="../../../assets/images/app_icon.png" class="app-icon" alt="app_name">
+            </div>
+            <p class="singIn-right-content__heading">Home Inventory</p>
+            <p class="singIn-right-content__content">Track and organize your things</p>
+            <div class="card shadow p-4 sign-in-form">
+                <h4 class="mb-4">Sign in to your account</h4>
+                <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" class="form-control sign-in-input" placeholder="Enter your username" name="username" formControlName="username" required>
+
+                        <small class="text-danger" *ngIf="signInForm.controls['username'].touched && signInForm.controls['username'].errors">
+                            <span *ngIf="signInForm.controls['username'].errors['required']">Username is required</span>
+                        </small>
+                    </div>
+        
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control sign-in-input" placeholder="Enter your username" name="password" formControlName="password" required>
+
+                                <small class="text-danger" *ngIf="signInForm.controls['password'].touched && signInForm.controls['password'].errors">
+                                    <span *ngIf="signInForm.controls['password'].errors['required']">Password is required</span>
+                                    <span *ngIf="signInForm.controls['password'].errors['minlength']">
+                                        Minimum 6 characters required
+                                    </span>
+                                </small>
+                    </div>
+        
+                    <div class="form-check mb-3">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">
+                                    Remember me
+                                </label>
+                            </div>
+                            <p class="custom-btn">Forgot password?</p>
+                        </div>
+                    </div>
+        
+                    <!-- Submit -->
+                    <button type="submit" [disabled]="signInForm.invalid" class="btn btn-primary w-100">
+                        <span class="btn-style"> Sign in <i style="margin-left: 5px;"
+                                class="fa-sharp fa-solid fa-arrow-right"></i> </span>
+                    </button>
+                </form>
+        
+                <!-- Extra links -->
+                <div class="d-flex justify-content-center text-center mt-3">
+                    Don't have an account? <p style="margin-left: 10px;" class="custom-btn">Create one</p>
+                </div>
+        
+            </div>
+
+            <p class="sign-in-footer" style="margin-top: 20px;">Version 1.2.4</p>
+
+            <div class="d-flex justify-content-between gap-2" style="margin: 0 25%">
+                <p class="sign-in-footer">Help Center</p>
+                <p class="sign-in-footer">Privacy Policy</p>
+                <p class="sign-in-footer">Terms of Service</p>
+            </div>
+        </div>
+    </div>
+</div>

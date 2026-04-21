@@ -1,0 +1,51 @@
+/* sidebar.component.css */
+.sidebar {
+  width: 256px;
+  background-color: #ffffff !important;
+  border-right: 1px solid #eee;
+}
+
+.app-name {
+    border-bottom: 2px solid #E2E8F0;
+    padding: 20px 25px;
+    text-align: left !important;
+}
+
+.nav-item__name {
+    margin-left: 12px;
+    vertical-align: text-top;
+}
+
+.app-icon {
+    background: #3B82F6;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.nav-link {
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.nav-link:hover {
+  background-color: #EFF6FF;
+  color: #3B82F6;
+  transform: translateX(5px);
+}
+
+/* Active link */
+.nav-link.active {
+  background-color: #e7f1ff;
+  color: #0d6efd;
+  font-weight: 500;
+}
+
+/* Icons */
+.nav-link i {
+  width: 20px;
+}

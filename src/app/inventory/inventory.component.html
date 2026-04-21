@@ -1,0 +1,64 @@
+<app-inventory-header (onProductAdded)="loadProducts()" (onProductSearch)="handleProductSearch($event)"></app-inventory-header>
+<app-inventory-filter></app-inventory-filter>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <input type="checkbox" />
+            </th>
+            <th>ITEM</th>
+            <th>LOCATION</th>
+            <th>LABELS</th>
+            <th>QUANTITY</th>
+            <th>UPDATED</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <ng-container *ngFor="let product of products">
+            <tr (click)="getProductDetails(product.id)">
+                <td>
+                    <input type="checkbox" (click)="$event.stopPropagation()" />
+                </td>
+                <td class="d-flex">
+                    <img src="../../assets/images/dummy_product.jpg" class="product_img">
+                    <div>
+                        <p class="m-0"><b>{{ product.name }}</b></p>
+                        <p class="m-0 custom-text-design">Model: {{ product.model }}</p>
+                    </div>
+                </td>
+                <td class="custom-text-design">{{ product.locations.join(' > ') }}</td>
+                <td>
+                    <div class="d-flex">
+                        <p *ngFor="let label of product.labels" class="label"
+                            [style.background-color]=" '' | randomColor"> {{ label }} </p>
+                    </div>
+                </td>
+                <td class="custom-text-design">{{ product.quantity }}</td>
+                <td class="custom-text-design">{{ product.lastUpdated }}</td>
+                <td (click)="$event.stopPropagation()">
+                    <span style="cursor:pointer;" (click)="op.toggle($event)">⋮</span>
+                    <p-popover #op>
+                        <div class="menu">
+                            <div class="cursor-pointer" (click)="editProduct(product)">Edit</div>
+                            <div class="cursor-pointer" (click)="showDeleteConfirmDialog(product.id)">Delete</div>
+                        </div>
+                    </p-popover>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+
+@if (showDeleteConfirmation) {
+    <app-confirmation-dialog (onCancel)="onDeleteCancel()" (onConfirmation)="onDeleteConfirmation()">  
+    </app-confirmation-dialog>
+}
+
+@if (showEditDialog) {
+    <app-add-edit-inventory-item [item]="productToBeEdited" [isForEdit]="true"
+                                 (onCancel)="hideEditDialog()" (onSave)="onProductEdited()" >
+    </app-add-edit-inventory-item>
+}

@@ -1,0 +1,41 @@
+<!-- header.component.html -->
+<nav class="navbar bg-white shadow-sm px-3">
+
+    <!-- Left: Search -->
+    <div class="d-flex align-items-center w-50">
+        <span class="cursor-pointer" (click)="goToInventory()" style="margin-right: 10px; color: #64748B;">Inventory &nbsp; ></span> {{ item()?.name }}
+    </div>
+
+    <!-- Right: Buttons -->
+    <div class="d-flex align-items-center gap-2">
+
+        <button class="action-btn" (click)="editProduct()">
+            <i class="fa-solid fa-edit me-1"></i>
+            Edit
+        </button>
+
+        <button class="action-btn">
+            <i class="fa-solid fa-download me-1"></i>
+            Add Attachment
+        </button>
+
+        <button class="delete-btn" (click)="showDeleteConfirmDialog()">
+            <i class="fa-solid fa-trash me-1"></i>
+            Delete
+        </button>
+
+    </div>
+
+</nav>
+
+
+@if (showDeleteConfirmation) {
+    <app-confirmation-dialog (onCancel)="onDeleteCancel()" (onConfirmation)="onDeleteConfirmation()">  
+    </app-confirmation-dialog>
+}
+
+@if (showEditDialog) {
+    <app-add-edit-inventory-item [item]="item()" [isForEdit]="true"
+                                 (onCancel)="hideEditDialog()" (onSave)="onProductEdited()" >
+    </app-add-edit-inventory-item>
+}

@@ -1,0 +1,52 @@
+<p-tabs [value]="activeTab" class="tabs-container" (valueChange)="tabChange($event)">
+    <p-tablist>
+        <p-tab [value]="0">Details</p-tab>
+        <p-tab [value]="1">Attachments</p-tab>
+        <p-tab [value]="2">Activity</p-tab>
+    </p-tablist>
+
+    <p-tabpanels>
+        <p-tabpanel [value]="0">
+            <div class="d-flex">
+                <div class="product-info__container">
+                    <h6><b>Product Information</b></h6>
+                    <div class="info-container">
+                        <p class="info-title custom-text-design">Brand</p>
+                        <p class="info-description custom-text-design"> <b>{{ item()?.brand }}</b> </p>
+                    </div>
+                    <div class="info-container">
+                        <p class="info-title custom-text-design">Model</p>
+                        <p class="info-description custom-text-design"> <b>{{ item()?.model }}</b> </p>
+                    </div>
+                    <div class="info-container">
+                        <p class="info-title custom-text-design">Color</p>
+                        <p class="info-description"> <b>{{ item()?.color }}</b> </p>
+                    </div>
+                </div>
+                <div class="additional-details__container">
+                    <h6><b>Additional Details</b></h6>
+                    <div class="info-container">
+                        <p class="info-title custom-text-design">Serial Number</p>
+                        <p class="info-description custom-text-design"> <b>{{ item()?.serialNumber }}</b> </p>
+                    </div>
+                    <div class="info-container">
+                        <p class="info-title custom-text-design">Purchase From</p>
+                        <p class="info-description custom-text-design"> <b>{{ item()?.purchasedFrom }}</b> </p>
+                    </div>
+                    <div class="info-container">
+                        <p class="info-title custom-text-design">Last Updated</p>
+                        <p class="info-description custom-text-design"> <b>{{ item()?.lastUpdated }}</b> </p>
+                    </div>
+                </div>
+            </div>
+        </p-tabpanel>
+
+        <p-tabpanel [value]="1">
+            <p>Attachemnts section</p>
+        </p-tabpanel>
+
+        <p-tabpanel [value]="2">
+            <p>Activity section</p>
+        </p-tabpanel>
+    </p-tabpanels>
+</p-tabs>

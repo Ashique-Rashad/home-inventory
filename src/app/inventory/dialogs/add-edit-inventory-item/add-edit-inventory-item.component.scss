@@ -1,0 +1,58 @@
+.w-100 {
+  width: 100%;
+}
+
+.asterisk {
+    color: rgb(217, 50, 50);
+}
+
+.form-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Row with 2 fields */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+/* Each field */
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  width: 100%;
+}
+
+/* Inputs */
+input, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Error state */
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.create-product__footer {
+  text-align: end;
+  background: #f3f3f3;
+  padding: 8px 16px;
+  margin: 15px -20px -10px -20px;
+  border-radius: 0 0 10px 10px;
+  position: sticky;
+  bottom: -10px;
+}
+
+small {
+  color: red;
+  font-size: 12px;
+}

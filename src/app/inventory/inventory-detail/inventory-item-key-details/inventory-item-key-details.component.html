@@ -1,0 +1,40 @@
+<div class="card-container">
+    <div class="item-card">
+        <div class="card-body">
+            <h6 class="m-0">Key Details</h6>
+            <div class="item-container">
+                <p class="item-title">Location</p>
+                <p class="item-description"> <i class="fa-solid fa-location-dot location-icon"></i> {{ item()?.locations}} </p>
+            </div>
+            <div class="item-container">
+                <p class="item-title">Labels</p>
+                <div class="d-flex">
+                    <p class="label" *ngFor="let label of item()?.labels" [style.background-color]=" '' | randomColor"> 
+                        {{ label }}
+                    </p>
+                </div>
+            </div>
+            <div class="item-container">
+                <p class="item-title">Quantity</p>
+                <p class="item-description">{{ item()?.quantity }}</p>
+            </div>
+            <div class="item-container">
+                <p class="item-title">Purchased Date</p>
+                <p class="item-description"> <i class="fa-solid fa-calendar calendar-icon"></i> {{ item()?.purchaseDate }}</p>
+            </div>
+            <div class="item-container">
+                <p class="item-title">Purchased Price</p>
+                <p class="item-description"> <b>{{ item()?.purchasePrice | currency:'USD' }}</b> </p>
+            </div>
+            <div class="item-container">
+                <p class="item-title">Warranty</p>
+                <p class="item-description label" [style.background-color]=" '' | randomColor" style="width: 16%; text-align: center;"> 
+                    {{ item()?.warranty }} </p>
+            </div>
+            <div class="item-container">
+                <p class="item-title">Notes</p>
+                <p class="item-description"> {{ item()?.notes }} </p>
+            </div>
+        </div>
+    </div>
+</div>

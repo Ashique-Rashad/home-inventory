@@ -1,0 +1,123 @@
+.signIn-left-content {
+    text-align: center;
+    width: 50%;
+    background: #E0E7FF;
+    padding-top: 15vh;
+    height: 100vh;
+}
+
+.singIn-right-content {
+    padding-top: 8vh;
+    background: #f8fafc;
+    width: 50%;
+    height: 100vh;
+}
+
+.sign-in-form {
+    margin: auto;
+    border-radius: 10px;
+    width: 420px;
+}
+
+#img-container {
+    padding: 0 46%;
+    margin-bottom: 10px;
+}
+
+.app-icon {
+    background: #3B82F6;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.btn-style {
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.custom-btn {
+    margin-top: 2px;
+    color: #3B82F6;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+
+}
+
+.signIn-left-content__heading {
+    margin-top: 24px;
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.signIn-left-content__content {
+    padding: 0 20%;
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.singIn-right-content__heading {
+    margin-bottom: 10px;
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.singIn-right-content__content {
+    padding: 0 20%;
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+    color: #64748B;
+}
+
+.sign-in-input::placeholder {
+  color: #9CA3AF;
+}
+
+.sign-in-footer {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+    color: #64748B;
+}

@@ -1,0 +1,37 @@
+<!-- header.component.html -->
+<nav class="navbar bg-white shadow-sm px-3">
+
+  <!-- Left: Search -->
+  <div class="d-flex align-items-center w-50">
+    <span style="margin-right: 15px; font-size: 20px;"><b>Inventory</b></span>
+    <div class="input-group ml-4">
+      <span class="input-group-text bg-light border-0">
+        <i class="fa-solid fa-search text-muted"></i>
+      </span>
+      <input type="text" class="form-control border-0 bg-light" [(ngModel)]="state.search"
+       (ngModelChange)="searchChanged($event)" placeholder="Search...">
+    </div>
+  </div>
+
+  <!-- Right: Buttons -->
+  <div class="d-flex align-items-center gap-2">
+
+    <button class="btn btn-outline-primary">
+      <i class="fa-solid fa-download me-1"></i>
+      Export
+    </button>
+
+    <button class="btn btn-primary" (click)="openAddDialog()">
+      <i class="fa-solid fa-plus me-1"></i>
+      Add item
+    </button>
+
+  </div>
+
+</nav>
+
+@if (addProductDialogVisible) {
+  <app-add-edit-inventory-item [item]="undefined" [isForEdit]="false"
+                               (onCancel)="hideDialog()" (onSave)="onProductAdd()">
+  </app-add-edit-inventory-item>
+}

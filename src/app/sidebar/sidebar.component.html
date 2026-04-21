@@ -1,0 +1,60 @@
+<!-- sidebar.component.html -->
+<div class="sidebar bg-white shadow-sm vh-100">
+
+  <h6 class="app-name text-center fw-bold"><img src="../../assets/images/app_icon.png" class="app-icon" alt="app_name"> Home Inventory </h6>
+
+  <ul class="nav flex-column p-3">
+
+    <li class="nav-item">
+      <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">
+        <img src="../../assets/images/dashboard_icon.png" alt="dashboard">
+        <span class="nav-item__name">Dashboard</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a routerLink="/users" routerLinkActive="active" class="nav-link">
+        <img src="../../assets/images/inventory_icon.png" style="color: #64748b;" alt="inventory">
+        <span class="nav-item__name">Inventory</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a routerLink="/settings" routerLinkActive="active" class="nav-link">
+        <img src="../../assets/images/location_icon.png" alt="location">
+        <span class="nav-item__name">Locations</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a routerLink="/settings" routerLinkActive="active" class="nav-link">
+        <img src="../../assets/images/label_icon.png" alt="label">
+        <span class="nav-item__name">Labels</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a routerLink="/settings" routerLinkActive="active" class="nav-link">
+        <img src="../../assets/images/receipt_icon.png" alt="receipt">
+        <span class="nav-item__name">Receipts</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a routerLink="/settings" routerLinkActive="active" class="nav-link">
+        <img src="../../assets/images/report_icon.png" alt="report">
+        <span class="nav-item__name">Reports</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item mt-4">
+      <a (click)="logout()" class="nav-link text-danger" style="cursor:pointer;">
+        <i class="fa-solid fa-right-from-bracket me-2"></i>
+        Logout
+      </a>
+    </li>
+
+  </ul>
+
+</div>
